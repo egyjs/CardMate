@@ -21,6 +21,27 @@ if (!function_exists('is_rtl')) {
     }
 }
 
+if (!function_exists('rtlCss')) {
+
+    function rtlCss($file= ''){
+        if (is_rtl()) {
+            $Ofile = ($file);
+            $filename = pathinfo($Ofile);
+            $fname = $filename['filename'];
+            $fpath = $filename['dirname'];
+            $fexe = $filename['extension'];
+
+
+            if (!file_exists(__DIR__ . '../../../../..' . $fpath . '/' . $fname . '.rtl.' . $fexe)) {
+                copy(__DIR__ . '../../../../..' . $Ofile, __DIR__ . '../../../../..' . $fpath . '/' . $fname . '.rtl.' . $fexe);
+            }
+            return $Ofile;
+        }
+    }
+}
+
+
+
 if (!function_exists('is_arabic')) {
 
     function is_arabic() {
@@ -35,7 +56,8 @@ if (!function_exists('is_arabic')) {
 }
 if (!function_exists('display')) {
 
-    function display($text = null) {
+    function display($text = null,$debug =false) {
+
 
         $locale=Session::get('locale');
         if(isset($locale))
@@ -50,6 +72,7 @@ if (!function_exists('display')) {
         if (!empty($text)) {
             $row = DB::table('language')->where('phrase', '=', $text)->first();
             if ($row && $row->$language) {
+                if(isset($_GET['displayDebug']) or $debug) return "{ {$row->en} }";
                 return $row->$language;
             } else {
 
@@ -64,7 +87,8 @@ if (!function_exists('display')) {
                 }
 
 
-                return $row->en;
+                    return $row->en;
+
                 // /mo2_43
                 //                            return false;
             }

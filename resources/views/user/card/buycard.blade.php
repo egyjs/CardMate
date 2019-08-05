@@ -12,12 +12,12 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single-blog-post"><!-- single blog page -->
                         <div class="thumb">
-                            <img src="{{asset($cat->image)}}" alt="card banner images">
+                            <img src="{{asset($cat->image)}}" alt="{{ display('card banner images')  }}">
                         </div>
                         <div class="content text-center">
-                            <a href="{{route('category.card',$cat->id)}}"><h4 class="title">{{$cat->cat_name}}</h4></a>
+                            <a href="{{route('category.card',$cat->id)}}"><h4 class="title">{{display($cat->cat_name)}}</h4></a>
 
-                            <a href="{{route('category.card',$cat->id)}}" class="btn btn-info btn-block">Select</a>
+                            <a href="{{route('category.card',$cat->id)}}" class="btn btn-info btn-block">{{ display('Select')  }}</a>
                         </div>
                     </div><!-- //. single blog page content -->
                 </div>

@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="about-page-content-inner"><!-- about page content inner -->
-                        <h2 class="title">My Cards</h2>
+                        <h2 class="title">{{ display('My Cards')  }}</h2>
 
                         <div class="row">
                             <div class="col-lg-12 col-md-12">
@@ -22,9 +22,9 @@
                                                 <table class="table table-bordered table-hover">
                                                     <thead>
                                                     <tr class="text-center">
-                                                        <th>Card Name</th>
-                                                        <th>Bought Time</th>
-                                                        <th>Action</th>
+                                                        <th>{{ display('Card Name')  }}</th>
+                                                        <th>{{ display('Bought Time')  }}</th>
+                                                        <th>{{ display('Action')  }}</th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
@@ -32,17 +32,20 @@
                                                         @foreach($usercard as $tr)
                                                             <tr class="text-center" id="tr_{{$tr->id}}">
                                                             
-                                                                <td>{{$tr->cats->cat_name}} -> {{$tr->card->name}}</td>
+                                                                <td>{{display($tr->cats->cat_name)}} -> {{display($tr->card->name)}}</td>
                                                                 <td>{{Carbon\Carbon::parse($tr->created_at)->format('d F Y - g:i A')}}</td>
                                                                 <td>
-                                                                    <button class="btn btn-info btn-sm btn-block dtlsviebtn" data-toggle="modal"  data-target="#dtlsviebtnnn{{$tr->id}}" data-id="{{$tr->id}}" data-details="{{$tr->card->card_details}}" data-image="{{asset($tr->card->card_image)}}">View</button>
+                                                                    <button class="btn btn-info btn-sm btn-block dtlsviebtn"
+                                                                            data-toggle="modal"  data-target="#dtlsviebtnnn{{$tr->id}}"
+                                                                            data-id="{{$tr->id}}" data-details="{{$tr->card->card_details}}"
+                                                                            data-image="{{asset($tr->card->card_image)}}">{{ display('View')  }}</button>
                                                                 </td>
                                                             </tr>
                                                             <div id="dtlsviebtnnn{{$tr->id}}" class="modal fade" role="dialog">
                                                                 <div class="modal-dialog">
                                                                     <div class="modal-content">
                                                                         <div class="modal-header headeingall">
-                                                                            <h4 class="modal-title" style="text-align: center">{{$tr->card->name}}</h4>
+                                                                            <h4 class="modal-title" style="text-align: center">{{display($tr->card->name)}}</h4>
                                                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                                                                         </div>
                                                                         <div class="modal-body">
@@ -60,11 +63,11 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="modal-footer" >
-                                                                            <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                                                                            <button type="button" class="btn btn-default pull-left" data-dismiss="modal">{{ display('Close')  }}</button>
                                                                             @if($tr->status == 0)
-                                                                                <button type="button" class="btn btn-default pull-right" data-id="{{$tr->id}}">Used</button>
+                                                                                <button type="button" class="btn btn-default pull-right" data-id="{{$tr->id}}">{{ display('Used')  }}</button>
                                                                             @else
-                                                                                <button type="button" class="btn btn-primary pull-right markused" data-id="{{$tr->id}}">Mark As Used</button>
+                                                                                <button type="button" class="btn btn-primary pull-right markused" data-id="{{$tr->id}}">{{ display('Mark As Used')  }}</button>
                                                                             @endif
                                                                         </div>
                                                                     </div>
@@ -74,7 +77,7 @@
                                                         @endforeach
                                                     @else
                                                         <tr>
-                                                            <td colspan="4"><h3 style="text-align: center">Sorry ! Right now you don't have any card.</h3></td>
+                                                            <td colspan="4"><h3 style="text-align: center">{{ display('Sorry ! Right now you don\'t have any card')  }}.</h3></td>
                                                         </tr>
                                                     @endif
                                                     </tbody>
@@ -110,7 +113,7 @@
                         'id' : id,
                     },
                     success:function (data) {
-                        var btn = "<button class='btn btn-default pull-right'>" + 'used ' +  "</button>";
+                        var btn = "<button class='btn btn-default pull-right'>" + '{{ display('used')  }}' +  "</button>";
                         $('.markused').replaceWith(btn);
                         $('#dtlsviebtnnn'+data.id).modal('hide');
                         $('#tr_'+data.id).remove();

@@ -64,7 +64,7 @@
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="#"> {{display('Balance')}}: {{Auth::user()->balance}} {{display($gnl->cur)}} </a>
                             <a class="dropdown-item" href="{{route('user.change-password')}}">{{display('Change Password')}}</a>
-                            <a class="dropdown-item" href="{{route('profile.index')}}">Profile</a>
+                            <a class="dropdown-item" href="{{route('profile.index')}}">{{ display('Profile')  }}</a>
                             <a class="dropdown-item" href="#"
                                onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{display('Logout')}}</a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

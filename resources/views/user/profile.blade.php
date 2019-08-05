@@ -15,7 +15,7 @@
                             @foreach ($errors->all() as $error)
                                 <div class="alert alert-danger alert-dismissable">
                                     <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                    <p>{{ $error }}</p>
+                                    <p>{{ display($error) }}</p>
                                 </div>
                             @endforeach
                         @endif
@@ -25,30 +25,32 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-element margin-bottom-20">
-                                        <input type="text" class="input-field" name="name" value="{{ Auth::user()->name }}" placeholder="Full Name">
+                                        <input type="text" class="input-field" name="name" value="{{ Auth::user()->name }}"
+                                               placeholder="{{ display('Full Name')  }}">
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-element margin-bottom-20">
-                                        <input type="email" class="input-field" name="email" value="{{ Auth::user()->email }}" placeholder="Email">
+                                        <input type="email" class="input-field" name="email" value="{{ Auth::user()->email }}"
+                                               placeholder="{{ display('Email')  }}">
                                     </div>
                                 </div>
 
                                 <div class="col-lg-6">
                                     <div class="form-element margin-bottom-20">
-                                        <input type="text" name="mobile" value="{{ Auth::user()->mobile }}" class="input-field" placeholder="Phone">
+                                        <input type="text" name="mobile" value="{{ Auth::user()->mobile }}" class="input-field" placeholder="{{ display('Phone')  }}">
                                     </div>
                                 </div>
 
                                 <div class="col-lg-6">
                                     <div class="form-element margin-bottom-20">
-                                        <input type="text" class="input-field" name="city" value="{{ Auth::user()->city }}" placeholder="Enter Name of City">
+                                        <input type="text" class="input-field" name="city" value="{{ Auth::user()->city }}" placeholder="{{ display('Enter Name of City')  }}">
                                     </div>
                                 </div>
 
                                 <div class="col-lg-12">
                                     <div class="form-element margin-bottom-20">
-                                        <input type="text" class="input-field"  name="country" value="{{ Auth::user()->country }}" placeholder="Country Name">
+                                        <input type="text" class="input-field"  name="country" value="{{ Auth::user()->country }}" placeholder="{{ display('Country Name')  }}">
                                     </div>
                                 </div>
 
@@ -56,7 +58,7 @@
 
                                     <div class="btn-wrapper">
                                         <div class="left-content">
-                                            <input type="submit" class="submit-btn" value="Update Profile">
+                                            <input type="submit" class="submit-btn" value="{{ display('Update Profile')  }}">
                                         </div>
                                     </div>
                                 </div>

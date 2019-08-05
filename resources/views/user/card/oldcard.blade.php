@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="about-page-content-inner"><!-- about page content inner -->
-                        <h2 class="title">My Used Card History</h2>
+                        <h2 class="title">{{display('My Used Card History')}}</h2>
 
                         <div class="row">
                             <div class="col-lg-12 col-md-12">
@@ -22,9 +22,9 @@
                                                 <table class="table table-bordered table-hover">
                                                     <thead>
                                                     <tr class="text-center">
-                                                        <th>Card Name</th>
-                                                        <th>Bought Time</th>
-                                                        <th>Action</th>
+                                                        <th>{{display('Card Name')}}</th>
+                                                        <th>{{display('Bought Time')}}</th>
+                                                        <th>{{ display('Action') }}</th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
@@ -34,7 +34,10 @@
                                                                 <td>{{$tr->card_no}}</td>
                                                                 <td>{{Carbon\Carbon::parse($tr->created_at)->format('d-F,Y - g:i A')}}</td>
                                                                 <td>
-                                                                    <button class="btn btn-info btn-sm btn-block dtlsviebtn" data-toggle="modal"  data-target="#dtlsviebtnnn{{$tr->id}}" data-id="{{$tr->id}}" data-details="{{$tr->card->card_details}}" data-image="{{asset($tr->card->card_image)}}">View</button>
+                                                                    <button class="btn btn-info btn-sm btn-block dtlsviebtn" data-toggle="modal"
+                                                                            data-target="#dtlsviebtnnn{{$tr->id}}" data-id="{{$tr->id}}"
+                                                                            data-details="{{$tr->card->card_details}}"
+                                                                            data-image="{{asset($tr->card->card_image)}}">{{display('View')}}</button>
                                                                 </td>
                                                             </tr>
                                                             <div id="dtlsviebtnnn{{$tr->id}}" class="modal fade" role="dialog">
@@ -58,7 +61,7 @@
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="modal-footer" >
+                                                                        <div class="modal-footer">
                                                                             <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
                                                                             @if($tr->status == 0)
                                                                                 <button type="button" class="btn btn-default pull-right " data-id="{{$tr->id}}">Used</button>

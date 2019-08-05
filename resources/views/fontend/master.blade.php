@@ -19,7 +19,12 @@
     <!-- magnific popup -->
     <link rel="stylesheet" href="{{url('/')}}/assets/fontend/css/magnific-popup.css">
     <!-- stylesheet -->
-    <link rel="stylesheet" href="{{url('/')}}/assets/fontend/css/style.css">
+    @if(is_rtl())
+    <!-- stylesheet -->
+        <link rel="stylesheet" href="{{url('/')}}/assets/fontend/css/rtl_style.css">
+    @else
+        <link rel="stylesheet" href="{{url('/')}}/assets/fontend/css/style.css">
+    @endif
     <!-- responsive -->
     <link rel="stylesheet" href="{{url('/')}}/assets/fontend/css/responsive.css">
     @yield('css')
@@ -95,11 +100,11 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
     @if(Session::has('msg'))
-    swal("{{Session::get('msg')}}", "", "success");
+    swal("{{display(Session::get('msg'))}}", "", "success");
     @endif
 
     @if(Session::has('alert'))
-    swal("{{Session::get('alert')}}", "", "warning");
+    swal("{{display(Session::get('alert'))}}", "", "warning");
     @endif
 </script>
 </body>

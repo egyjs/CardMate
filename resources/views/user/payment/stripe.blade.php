@@ -23,7 +23,7 @@
 <section class="about-page-content-area">
 		<div class="container">
 			<div class="sec-title text-center">
-				<h2>{{$pt}}</h2>
+				<h2>{{display($pt)}}</h2>
 				<div class="col-md-4 col-md-offset-8">
 					@include('layouts.error')
 				</div>
@@ -36,13 +36,13 @@
 						<div class="row">
 							<div class="col-xs-6">
 								<div class="form-group">
-									<label for="name">CARD NAME</label>
+									<label for="name">{{display('CARD NAME')}}</label>
 									<div class="input-group">
 										<input
 										type="text"
 										class="form-control input-lg"
 										name="name"
-										placeholder="Card Name"
+										placeholder="{{display('Card Name')}}"
 										autocomplete="off" autofocus
 										/>
 										<span class="input-group-addon"><i class="fa fa-font"></i></span>
@@ -51,13 +51,13 @@
 							</div>
 							<div class="col-xs-6">
 								<div class="form-group">
-									<label for="cardNumber">CARD NUMBER</label>
+									<label for="cardNumber">{{display('CARD NUMBER')}}</label>
 									<div class="input-group">
 										<input
 										type="tel"
 										class="form-control input-lg"
 										name="cardNumber"
-										placeholder="Valid Card Number"
+										placeholder="{{display('Valid Card Number')}}"
 										autocomplete="off"
 										required autofocus
 										/>
@@ -71,7 +71,9 @@
 						<div class="row">
 							<div class="col-xs-7 col-md-7">
 								<div class="form-group">
-									<label for="cardExpiry">EXPIRATION DATE</label>
+									<label for="cardExpiry">
+										{{display('EXPIRATION DATE')}}
+										</label>
 									<input
 									type="tel"
 									class="form-control input-lg input-sz"
@@ -84,7 +86,9 @@
 							</div>
 							<div class="col-xs-5 col-md-5 pull-right">
 								<div class="form-group">
-									<label for="cardCVC">CVC CODE</label>
+									<label for="cardCVC">
+										{{display('CVC CODE')}}
+									</label>
 									<input
 									type="tel"
 									class="form-control input-lg input-sz"
@@ -98,7 +102,8 @@
 						</div>					
 						<div class="row">
 							<div class="col-xs-12">
-								<button class="btn btn-success btn-lg btn-block " style="background-color: #{{$gnl->color}}" type="submit"> PAY NOW </button>
+								<button class="btn btn-success btn-lg btn-block " style="background-color: #{{$gnl->color}}" type="submit">
+									{{display('PAY NOW')}} </button>
 							</div>
 						</div>
 						

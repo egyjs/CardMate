@@ -11,11 +11,11 @@
                         <table class="table">
                             <thead>
                             <tr>
-                                <th style="text-align: center"> Date</th>
-                                <th style="text-align: center">Transaction Number</th>
-                                <th style="text-align: center">Details</th>
-                                <th style="text-align: center">Amount</th>
-                                <th style="text-align: center">Banlance</th>
+                                <th style="text-align: center">{{display('Date')}}</th>
+                                <th style="text-align: center">{{display('Transaction Number')}}</th>
+                                <th style="text-align: center">{{display('Details')}}</th>
+                                <th style="text-align: center">{{display('Amount')}}</th>
+                                <th style="text-align: center">{{display('Balance')}}</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -31,7 +31,11 @@
                             @endforeach
                             @else
                                 <tr>
-                                    <td colspan="4"><h3 style="text-align: center">Sorry ! Right now you don't have any Transaction.</h3></td>
+                                    <td colspan="4">
+                                        <h3 style="text-align: center">
+                                            {{display('Sorry ! Right now you don\'t have any Transaction.')}}
+                                        </h3>
+                                    </td>
                                 </tr>
                             @endif
                             </tbody>

@@ -86,7 +86,7 @@
 <div class="footer-bottom">
     <div class="thm-container clearfix">
         <div class="left-copy pull-left">
-        <p>Copyright - <a href="{{url('/')}}">{{$gnl->title}}</a></p>
+        <p>Copyright - <a href="{{url('/')}}">{{display($gnl->title)}}</a></p>
         </div>
     </div>
 </div>

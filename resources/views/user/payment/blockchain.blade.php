@@ -18,10 +18,10 @@
 				
 				<div class="panel panel-primary">
 					<div class="panel-body text-center">
-						<h6> PLEASE SEND EXACTLY <span style="color: green"> {{ $bitcoin->amount }}</span> BTC</h6>
-						<h5>TO <span style="color: green;font-size: 15px;"> {{ $bitcoin->sendto }}</span></h5>
+						<h6> {{display('PLEASE SEND EXACTLY')}} <span style="color: green"> {{ $bitcoin->amount }}</span> BTC</h6>
+						<h5>{{display('TO')}} <span style="color: green;font-size: 15px;"> {{ $bitcoin->sendto }}</span></h5>
 						{!! $bitcoin->code !!}
-						<h4 style="font-weight:bold;">SCAN TO SEND</h4>
+						<h4 style="font-weight:bold;">{{display('SCAN TO SEND')}}</h4>
 					</div>
 				</div>
 

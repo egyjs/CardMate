@@ -5,7 +5,7 @@
 <section class="become-investor">
     <div class="thm-container">
         <div class="sec-title text-center">
-            <h2>{{$pt}}</h2>
+            <h2>{{display($pt)}}</h2>
         </div>
         
         <div class="row table-responsive">

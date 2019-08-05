@@ -5,7 +5,7 @@
 <section class="become-investor">
     <div class="thm-container">
         <div class="sec-title text-center">
-            <h2>{{$pt}}</h2>
+            <h2>{{display($pt)}}</h2>
             <div class="col-md-4 col-md-offset-8">
             @include('layouts.error')
             </div>
@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-md-9">
                 <div class="panel panel-success">
-                    <div class="panel-heading text-center">Deposit Methods</div>
+                    <div class="panel-heading text-center">{{ display('Deposit Methods')  }}</div>
                     <div class="panel-body">
                    
                         @foreach($gates as $gate)

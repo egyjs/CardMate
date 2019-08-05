@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>{{$gnl->title}}</title>
+    <title>{{display($gnl->title)}}</title>
 </head>
 
 <body>

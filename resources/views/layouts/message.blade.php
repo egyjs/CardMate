@@ -4,7 +4,7 @@
         $.notify({
             type: 'success',
             title: "Success!",
-            message: "{{ session('success') }}"
+            message: "{{ display(session('success')) }}"
         });
     });
 </script>
@@ -16,7 +16,7 @@
             $.notify({
                 allow_dismiss: true,
                 title: "Sorry!",
-                message: "{{ session('alert') }}"
+                message: "{{ display(session('alert')) }}"
             },{
                 type: 'danger'
             });

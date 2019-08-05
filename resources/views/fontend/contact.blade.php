@@ -14,7 +14,7 @@
     <section class="contact-page-area">
         <div class="container contact-page-container">
             <div class="row justify-content-center">
-                <div class="col-lg-9">{{ display('') }}
+                <div class="col-lg-9">
                     <div class="section-title">
                         <h2 class="title">{{display('Contact With Us')}}</h2>
                     </div>

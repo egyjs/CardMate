@@ -25,10 +25,10 @@
                                         <div class="card-body ">
                                             <div class="form-group">
                                                 <ul style="margin: 0px; padding: 0px; text-align: center;">
-                                                    <li class="list-group-item">Amount: <strong>{{$data->amount}} {{$gnl->cur}}</strong></li>
-                                                    <li class="list-group-item">Charge: <strong>{{$data->charge}} {{$gnl->cur}}</strong></li>
-                                                    <li class="list-group-item">Payable: <strong>{{$data->charge + $data->amount}} {{$gnl->cur}}</strong></li>
-                                                    <li class="list-group-item">In USD: <strong>${{$data->usd_amo}}</strong></li>
+                                                    <li class="list-group-item">{{display('Amount')}}: <strong>{{$data->amount}} {{$gnl->cur}}</strong></li>
+                                                    <li class="list-group-item">{{display('Charge')}}: <strong>{{$data->charge}} {{$gnl->cur}}</strong></li>
+                                                    <li class="list-group-item">{{display('Payable')}}: <strong>{{$data->charge + $data->amount}} {{$gnl->cur}}</strong></li>
+                                                    <li class="list-group-item">{{display('In USD')}}: <strong>${{$data->usd_amo}}</strong></li>
                                                 </ul>
                                             </div>
 
@@ -37,7 +37,7 @@
 
                                 </div>
                                 <div class="form-group" >
-                                     <button class="btn btn-info col-md-12" ><i class="fas fa-check-circle"></i> Deposit Now</button>
+                                     <button class="btn btn-info col-md-12" ><i class="fas fa-check-circle"></i>{{display('Deposit Now')}}</button>
                                 </div>
 
                             </div>
